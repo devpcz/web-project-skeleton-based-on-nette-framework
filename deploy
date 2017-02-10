@@ -1,0 +1,15 @@
+git fetch
+
+mv www/index.php www/pindex.php
+mv www/index_deploy.php www/index.php
+
+git merge origin/master
+
+mv temp/cache temp/cache-to-delete
+
+vendor/bin/phinx migrate -e production
+
+mv www/index.php www/index_deploy.php
+mv www/pindex.php www/index.php
+
+rm -R temp/cache-to-delete

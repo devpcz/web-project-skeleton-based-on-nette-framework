@@ -1,0 +1,1 @@
+Web project skeleton with some useful basic utils. Based on Nette Framework.
